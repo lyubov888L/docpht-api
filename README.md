@@ -6,3 +6,5 @@ a quick api for https://github.com/docpht/docpht using https://github.com/jsoend
 Now you can update via any programing language. 
 
 
+- Getting started. 
+. edit this file. [request-handler.sh](https://github.com/Nllii/docpht-api/blob/main/api-volumes/hapttic/request-handler.sh)
