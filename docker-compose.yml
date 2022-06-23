@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  docpht-workflow:
+    build:
+      context: docpht
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./api-volumes/docpht/config:/var/www/app/src/config 
+      - ./api-volumes/docpht/data:/var/www/app/data 
+      - ./api-volumes/docpht/pages:/var/www/app/pages 
+      - /etc/nginx/ssl:/etc/nginx/ssl     
+    ports:
+        - 8070:80
+        - 444:443
+    restart: always
+  docpht-hapttic-server:
+    build:
+      context: hapttic
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+        - 8012:8080
+    volumes:
+      - ./api-volumes/hapttic/request-handler.sh:/hapttic_request_handler.sh                  # Replace this
+    command: ["-file", "/hapttic_request_handler.sh"]
+
