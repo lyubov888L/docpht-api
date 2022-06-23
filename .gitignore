@@ -1,6 +1,5 @@
 # Build and Release Folders
 docpht
-hapttic
 api-volumes/docpht/config/*
 api-volumes/docpht/data/*
 api-volumes/docpht/pages/*
