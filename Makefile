@@ -13,16 +13,16 @@ build_api: docker preflight compose clean
 docker:
 	$(build)
 	bash git-projects.sh -install-docpht
-	bash git-projects.sh -install-hapttic
+# bash git-projects.sh -install-hapttic
 
 
 
 preflight:
 	$(move_file)
-	cd hapttic/ && go mod init hapttic-alpha
-	cd ..
-	cp Dockerfile.haptic hapttic/Dockerfile.haptic
 	cp Dockerfile.docpht docpht/Dockerfile.docpht
+# cp Dockerfile.haptic hapttic/Dockerfile.haptic
+# cd hapttic/ && go mod init hapttic-alpha
+# cd ..
 
 
 

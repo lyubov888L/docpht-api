@@ -14,19 +14,17 @@ services:
         - 8070:80
         - 444:443
     restart: always
-  docpht-hapttic-server:
-    container_name: docpht-hapttic-server
-    build:
-      context: hapttic
-      dockerfile: ./Dockerfile.haptic
-    restart: always
-    ports:
-        - 8012:8080
-    volumes:
-
-      - ./api-volumes/docpht/request-handler.sh:/hapttic_request_handler.sh                  # Replace this
-    
-    command: ["-file", "/hapttic_request_handler.sh"]
+  # docpht-hapttic-server:
+  #   container_name: docpht-hapttic-server
+  #   build:
+  #     context: hapttic
+  #     dockerfile: ./Dockerfile.haptic
+  #   restart: always
+  #   ports:
+  #       - 8012:8080
+  #   volumes:
+  #     - ./api-volumes/docpht/request-handler.sh:/hapttic_request_handler.sh                  # Replace this
+  #   command: ["-file", "/hapttic_request_handler.sh"]
 
 # volumes:
 #   snikket_snikket_data:

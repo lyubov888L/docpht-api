@@ -4,8 +4,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 RUN go build -o hapttic .
-# RUN go mod init hapttic-alpha
-# RUN go mod tidy
+
 
 FROM alpine
 
