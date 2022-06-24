@@ -23,6 +23,7 @@ services:
     ports:
         - 8012:8080
     volumes:
+
       - ./api-volumes/docpht/request-handler.sh:/hapttic_request_handler.sh                  # Replace this
     
     command: ["-file", "/hapttic_request_handler.sh"]
