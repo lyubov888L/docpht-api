@@ -1,5 +1,7 @@
 FROM golang:alpine
 
+MAINTAINER Jan Soendermann <jan.soendermann+git@gmail.com>
+
 RUN apk add --no-cache \
   bash \
   jq \

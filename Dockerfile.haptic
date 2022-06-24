@@ -1,13 +1,11 @@
 FROM golang:alpine as build-env
-
-MAINTAINER Jan Soendermann <jan.soendermann+git@gmail.com>
-
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . .
 
 RUN go build -o hapttic .
-
+# RUN go mod init hapttic-alpha
+# RUN go mod tidy
 
 FROM alpine
 

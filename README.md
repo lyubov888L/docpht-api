@@ -7,4 +7,9 @@ Now you can update via any programing language.
 
 
 - Getting started. 
+
 . edit this file. [request-handler.sh](https://github.com/Nllii/docpht-api/blob/main/api-volumes/hapttic/request-handler.sh)
+
+
+- docpht port is map on   8070 and exposed on 8080
+- hapttic is on 8012:8080

@@ -1,2 +1,3 @@
-module hapttic_alpha_v0
+module hapttic-alpha
+
 go 1.18
