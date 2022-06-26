@@ -4,6 +4,9 @@ no_cache = @echo "\e[1;34musing --no-cache build $<\e[0m"
 move_file = @echo "\e[1;32mrunning go mod init and copying files $< to $@\e[0m"
 testing = @echo "\e[1;34mTesting  $<\e[0m"
 disabled =  @echo "\e[1;34mRemoving hapttic.service $<\e[0m"
+on_boot = 	 @echo "\e[1;34madding to boot $<\e[0m"
+disable_boot = @echo "\e[1;31mdisable on boot $<\e[0m"
+
 .ONESHELL:
 .PHONY: build_api
 build_api: docker preflight test_service compose clean 
@@ -68,12 +71,18 @@ clean:
 remove-service:
 # systemctl stop hapttic
 # systemctl daemon-reload
-
-
 	$(disabled)
 
 # systemctl start hapttic
 # @touch .enabled
 
 
+
+boot-up:
+	$(on_boot)
+	systemctl enable hapttic
+
+boot-down:
+	$(disable_boot)
+	systemctl disable hapttic
 
