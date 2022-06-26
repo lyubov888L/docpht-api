@@ -16,8 +16,8 @@ build_api: docker preflight test_service compose clean
 .PHONY: docker
 docker:
 	$(build)
-# bash git-projects.sh -install-docpht
-# bash git-projects.sh -install-hapttic
+	bash git-projects.sh -install-docpht
+	bash git-projects.sh -install-hapttic
 
 
 
@@ -46,14 +46,11 @@ test_service:
 
 
 
-
-
-
 .PHONY: compose
 compose: 
 	$(no_cache)
-# sudo docker-compose build --no-cache --force-rm
-# sudo docker-compose up -d --force-recreate
+	sudo docker-compose build --no-cache --force-rm
+	sudo docker-compose up -d --force-recreate
 # $(shell sudo docker-compose build --no-cache )
 # $(shell sudo docker-compose up -d )
 
