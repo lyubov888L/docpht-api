@@ -69,6 +69,8 @@ clean:
 
 # .PHONY: remove-service
 remove-service:
+	rm /lib/systemd/system/hapttic.service
+
 # systemctl stop hapttic
 # systemctl daemon-reload
 	$(disabled)
