@@ -3,9 +3,10 @@ enabled = @echo "\e[1;31madding .enabled file to keep track of installing proces
 no_cache = @echo "\e[1;34musing --no-cache build $<\e[0m"
 move_file = @echo "\e[1;32mrunning go mod init and copying files $< to $@\e[0m"
 testing = @echo "\e[1;34mTesting  $<\e[0m"
+disabled =  @echo "\e[1;34mRemoving hapttic.service $<\e[0m"
 .ONESHELL:
 .PHONY: build_api
-build_api: docker preflight test_service compose clean
+build_api: docker preflight test_service compose clean 
 
 
 
@@ -34,6 +35,7 @@ preflight:
 test_service:
 	$(testing)
 	systemctl daemon-reload
+	systemctl stop hapttic
 	systemctl start hapttic
 	systemctl status hapttic
 	systemctl stop hapttic
@@ -59,6 +61,19 @@ clean:
 	systemctl start hapttic
 	@touch .enabled
 
+
+
+
+# .PHONY: remove-service
+remove-service:
+# systemctl stop hapttic
+# systemctl daemon-reload
+
+
+	$(disabled)
+
+# systemctl start hapttic
+# @touch .enabled
 
 
 
