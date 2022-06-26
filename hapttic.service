@@ -1,0 +1,20 @@
+[Unit]
+Description= a little service running to help edit docpht
+ConditionPathExists=/root/docpht-api/hapttic/
+After=network.target
+ 
+[Service]
+Type=simple
+User=root
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+
+
+WorkingDirectory=/root/docpht-api/
+ExecStart=/root/docpht-api/hapttic/hapttic-alpha -file api-volumes/request-handler.sh
+
+ 
+[Install]
+WantedBy=multi-user.target

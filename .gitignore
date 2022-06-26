@@ -1,6 +1,7 @@
 # Build and Release Folders incase of git-push and git-commit.
 # don't push these
 docpht
+hapttic
 api-volumes/docpht/config/*
 api-volumes/docpht/data/*
 api-volumes/docpht/pages/*

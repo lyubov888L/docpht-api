@@ -5,3 +5,4 @@ headers = {
 }
 
 response = requests.get('http://localhost:8080', headers=headers)
+print(response.text)
